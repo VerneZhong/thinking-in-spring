@@ -8,10 +8,6 @@
         <property name="id" value="1"/>
         <property name="name" value="zxb"/>
     </bean>
-    <bean id="user2" class="org.zxb.thinking.in.spring.ioc.overview.domain.User">
-        <property name="id" value="2"/>
-        <property name="name" value="钟学斌"/>
-    </bean>
 
     <bean id="superUser" class="org.zxb.thinking.in.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
         <property name="address" value="北京"></property>
