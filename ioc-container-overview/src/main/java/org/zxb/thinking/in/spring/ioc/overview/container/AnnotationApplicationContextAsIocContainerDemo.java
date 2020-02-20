@@ -29,7 +29,11 @@ public class AnnotationApplicationContextAsIocContainerDemo {
         // 初始化上下文
         applicationContext.refresh();
 
+        // 按照类型查找
         lookupCollectionByType(applicationContext);
+
+        // 关闭上下文
+        applicationContext.close();
     }
 
     /**
