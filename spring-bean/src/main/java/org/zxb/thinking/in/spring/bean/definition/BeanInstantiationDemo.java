@@ -5,7 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zxb.thinking.in.spring.ioc.overview.domain.User;
 
 /**
- * Bean 示例化示例
+ * 常规方式 Bean 示例化示例
  *
  * @author Mr.zxb
  * @date 2020-03-03 10:33
