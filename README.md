@@ -289,3 +289,9 @@
       * XML 配置: ```<bean init-method="initMethod"  .../>```
       * Java 注解: ```@Bean(initMethod="initMethod")``` 
       * Java API: ```AbstractBeanDefinition#setInitMethodName(String)```
+  * 优先级：@PostConstruct > InitializingBean > 自定义初始化
+  
+  ### 延迟初始化 Spring Bean
+  * Bean 延迟初始化（Lazy Initialization）
+    * XML 配置：```<bean lazy-init="true" .../>```
+    * Java 注解：@Lazy(true)
