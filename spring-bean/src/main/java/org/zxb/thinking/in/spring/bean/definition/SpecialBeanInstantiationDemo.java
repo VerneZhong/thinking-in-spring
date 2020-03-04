@@ -1,13 +1,11 @@
 package org.zxb.thinking.in.spring.bean.definition;
 
-import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.zxb.thinking.in.spring.bean.factory.DefaultUserFactory;
 import org.zxb.thinking.in.spring.bean.factory.UserFactory;
-import org.zxb.thinking.in.spring.ioc.overview.domain.User;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;
