@@ -44,7 +44,7 @@ public class BeanInitializationDemo {
 
     @Bean(initMethod = "initUserFactory", destroyMethod = "doDestroy")
     // 延迟初始化开启后，就会按需加载，会在Spring 上下文启动之后加载
-    @Lazy
+//    @Lazy
     public UserFactory userFactory() {
         return new DefaultUserFactory();
     }

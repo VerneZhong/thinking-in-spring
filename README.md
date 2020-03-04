@@ -305,3 +305,9 @@
       * Java 注解: ```@Bean(destroy="destroy")``` 
       * Java API: ```AbstractBeanDefinition#setDistroyMethodName(String)```
   * 优先级：@PostDestroy > DisposableBean > 自定义销毁
+  
+  ### 垃圾回收 Spring Bean
+  * Bean 垃圾回收（GC）
+    * 关闭 Spring 容器（应用上下文）
+    * 执行 GC
+    * Spring Bean 覆盖的 finalize() 方法被回调
