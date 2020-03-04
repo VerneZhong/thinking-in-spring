@@ -37,10 +37,12 @@ public class BeanInitializationDemo {
         System.out.println(userFactory);
 
         // 关闭 Spring 上下文
+        System.out.println("Spring 应用上下文准备关闭。。。。 ");
         applicationContext.close();
+        System.out.println("Spring 应用上下文关闭中。。。。 ");
     }
 
-    @Bean(initMethod = "initUserFactory")
+    @Bean(initMethod = "initUserFactory", destroyMethod = "doDestroy")
     // 延迟初始化开启后，就会按需加载，会在Spring 上下文启动之后加载
     @Lazy
     public UserFactory userFactory() {

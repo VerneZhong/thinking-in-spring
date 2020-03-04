@@ -295,3 +295,13 @@
   * Bean 延迟初始化（Lazy Initialization）
     * XML 配置：```<bean lazy-init="true" .../>```
     * Java 注解：@Lazy(true)
+    
+  ### 销毁 Spring Bean
+  * Bean 销毁（Destroy）
+    * @PostDestroy 标注方法
+    * 实现 DisposableBean 接口的 destroy() 方法
+    * 自定义销毁方法
+      * XML 配置: ```<bean destroy-method="destroy"  .../>```
+      * Java 注解: ```@Bean(destroy="destroy")``` 
+      * Java API: ```AbstractBeanDefinition#setDistroyMethodName(String)```
+  * 优先级：@PostDestroy > DisposableBean > 自定义销毁
