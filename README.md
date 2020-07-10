@@ -373,3 +373,43 @@
                 * getIfAvailable(Supplier)
                 * IfAvailable(Consumer)
             * Stream 扩展 - stream()    
+            
+  ### 安全依赖查找
+  * 依赖查找安全性对比
+    <table>
+        <thead>
+            <tr>
+                <th>依赖查找类型</th>
+                <th>代表实现</th>
+                <th>是否安全</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>单一类型查找</td>
+                <td>BeanFactory#getBean</td>
+                <td><span style="color: red;">否</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>BeanFactory#getObject</td>
+                <td><span style="color: red;">否</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>BeanFactory#getIfAvailable</td>
+                <td><span style="color: green;">是</span></td>
+            </tr>
+            <tr>
+                <td>集合类型查找</td>
+                <td>ListableBeanFactory#getBeansOfType</td>
+                <td><span style="color: green;">是</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>ObjectProvider#stream</td>
+                <td><span style="color: green;">是</span></td>
+            </tr>
+        </tbody>
+    </table>
+   注意：层次性依赖查找的安全性取决于其扩展的单一或集合类型的 BeanFactory 接口
