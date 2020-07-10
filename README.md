@@ -363,3 +363,13 @@
             * 集合类型：BeanFactoryUtils#beansOfTypeIncludingAncestors
         * 根据 Java 注解查找名称列表
             * BeanFactoryUtils#beanNamesForTypeIncludingAncestros
+            
+  ### 延迟依赖查找
+  * Bean 延迟依赖查找接口
+    * org.springframework.beans.factory.ObjectFactory
+    * org.springframework.beans.factory.ObjectProvider
+        * Spring 5 对 Java8 特性扩展
+            * 函数式接口
+                * getIfAvailable(Supplier)
+                * IfAvailable(Consumer)
+            * Stream 扩展 - stream()    
