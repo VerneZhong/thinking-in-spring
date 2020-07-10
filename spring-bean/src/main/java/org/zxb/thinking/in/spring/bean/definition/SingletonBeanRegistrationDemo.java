@@ -1,6 +1,7 @@
 package org.zxb.thinking.in.spring.bean.definition;
 
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.config.SingletonBeanRegistry;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.zxb.thinking.in.spring.bean.factory.DefaultUserFactory;
 import org.zxb.thinking.in.spring.bean.factory.UserFactory;
@@ -21,7 +22,7 @@ public class SingletonBeanRegistrationDemo {
 
         // 创建一个 UserFactory 外部对象
         UserFactory userFactory = new DefaultUserFactory();
-        ConfigurableListableBeanFactory beanFactory = applicationContext.getBeanFactory();
+        SingletonBeanRegistry beanFactory = applicationContext.getBeanFactory();
 
         // 注册外部单体对象
         beanFactory.registerSingleton("userFactory", userFactory);
@@ -30,7 +31,7 @@ public class SingletonBeanRegistrationDemo {
         applicationContext.refresh();
 
         // 通过依赖查找的方式来获取 UserFactory
-        UserFactory userFactoryByLookup = beanFactory.getBean("userFactory", UserFactory.class);
+        UserFactory userFactoryByLookup = applicationContext.getBean("userFactory", UserFactory.class);
         System.out.println("userFactory == userFactoryByLookup : " + (userFactory == userFactoryByLookup));
 
         // 关闭 Spring 上下文

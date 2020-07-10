@@ -38,6 +38,9 @@ public class SpecialBeanInstantiationDemo {
         System.out.println(userFactory.createUser());
     }
 
+    /**
+     * ServiceLoader 加载实例
+     */
     public static void serviceLoaderTest() {
         ServiceLoader<UserFactory> loader = ServiceLoader.load(UserFactory.class,
                 Thread.currentThread().getContextClassLoader());

@@ -25,7 +25,7 @@ public class BeanDefinitionCreationDemo {
                 .addPropertyValue("name", "钟学斌");
 
         // 获取 BeanDefinition 实例
-        AbstractBeanDefinition beanDefinition = beanDefinitionBuilder.getBeanDefinition();
+        BeanDefinition beanDefinition = beanDefinitionBuilder.getBeanDefinition();
 
         // BeanDefinition 并非 Bean 终态，可以自定义修改
 

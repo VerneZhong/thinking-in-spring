@@ -100,7 +100,7 @@ public class DependencyLookupDemo {
 
     /**
      * Bean 名称实时查找
-     *
+     * 
      * @param beanFactory
      */
     private static void lookupInRealTime(BeanFactory beanFactory) {
