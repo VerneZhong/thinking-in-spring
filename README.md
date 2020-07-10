@@ -499,3 +499,53 @@
           </tr>
       </tbody>
     </table>
+    
+  ### 依赖查找中的经典异常
+  * BeansException 子类型
+      <table>
+        <thead>
+            <tr>
+                <th>异常类型</th>
+                <th>触发条件（举例）</th>
+                <th>场景举例</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>NoSuchBeanDefinitionException</td>
+                <td>当查找 Bean 不存在于 IoC 容器时</td>
+                <td>BeanFactory#getBeanObjectFactory#getObject</td>
+            </tr>
+            <tr>
+                <td>NoUniqueBeanDefinitionException</td>
+                <td>类型依赖查找时，IoC 容器存在多个 Bean 实例</td>
+                <td>BeanFactory#getBean(Class)</td>
+            </tr>
+            <tr>
+                <td>BeanInstantiationException</td>
+                <td>当 Bean 所对应的类型非具体类时</td>
+                <td>BeanFactory#getBean</td>
+            </tr>
+            <tr>
+                <td>BeanCreationException</td>
+                <td>当 Bean 初始化过程中</td>
+                <td>Bean 初始化方法执行异常时</td>
+            </tr>
+            <tr>
+                <td>BeanDefinitionStoreException</td>
+                <td>当 BeanDefinition 配置元信息非法时</td>
+                <td>XML 配置资源无法打开时</td>
+            </tr>
+        </tbody>
+      </table>
+  
+  ### 面试题精选
+   * 沙雕面试题 - ObjectFactory 与 BeanFactory 的区别？
+    答：ObjectFactory 与 BeanFactory 均提供依赖查找的能力。不过 ObjectFactory 仅关注一个或一种类型的 Bean 依赖查找，
+     并且自身不具备依赖查找的能力，能力则由 BeanFactory 输出。BeanFactory 则提供了单一类型、集合类型以及层次性等多种依赖查找方式。
+  
+   * 996 面试题 - BeanFactory.getBean 操作是否线程安全？
+    答：BeanFactory.getBean 方法的执行是线程安全的，操作过程中会增加互斥锁
+    
+  
+    
