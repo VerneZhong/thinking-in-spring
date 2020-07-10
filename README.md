@@ -388,7 +388,7 @@
             <tr>
                 <td>单一类型查找</td>
                 <td>BeanFactory#getBean</td>
-                <td><span style="color: red;">否</span></td>
+                <td><font color=red>否</font></td>
             </tr>
             <tr>
                 <td></td>
