@@ -388,7 +388,7 @@
             <tr>
                 <td>单一类型查找</td>
                 <td>BeanFactory#getBean</td>
-                <td><font color=red>否</font></td>
+                <td><span style="color: red;">否</span></td>
             </tr>
             <tr>
                 <td></td>
@@ -413,3 +413,89 @@
         </tbody>
     </table>
    注意：层次性依赖查找的安全性取决于其扩展的单一或集合类型的 BeanFactory 接口
+   
+  ### 内建可查找的依赖
+  * AbstractApplicationContext 内建可查找的依赖
+    <table>
+        <thead>
+            <tr>
+                <th>Bean 名称</th>
+                <th>Bean 实例</th>
+                <th>使用场景</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>environment</td>
+                <td>Environment 对象</td>
+                <td>外部化配置以及 Profiles</td>
+            </tr>
+            <tr>
+                <td>systemProperties</td>
+                <td>java.util.Properties 对象</td>
+                <td>Java 系统属性</td>
+            </tr>
+            <tr>
+                <td>systemEnvironment</td>
+                <td>java.util.Map 对象</td>
+                <td>操作系统环境变量</td>
+            </tr>
+            <tr>
+                <td>messageSource</td>
+                <td>MessageSource 对象</td>
+                <td>国际化文案</td>
+            </tr>
+            <tr>
+                <td>lifecycleProcessor</td>
+                <td>LifecycleProcessor 对象</td>
+                <td>Lifecycle Bean 处理器</td>
+            </tr>
+            <tr>
+                <td>applicationEventMulticaster</td>
+                <td>ApplicationEventMulticaster 对象</td>
+                <td>Spring 事件广播器</td>
+            </tr>
+        </tbody>
+    </table>
+  * 注解驱动 Spring 应用上下文内建可查找的依赖（部分）
+     <table>
+      <thead>
+          <tr>
+              <th>Bean 名称</th>
+              <th>Bean 实例</th>
+              <th>使用场景</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>org.springframework.context.annotation.internalConfigurationAnnotationProcessor</td>
+              <td>ConfigurationClassPostProcessor 对象</td>
+              <td>处理 Spring 配置类</td>
+          </tr>
+          <tr>
+              <td>org.springframework.context.annotation.internalAutowiredAnnotationProcessor</td>
+              <td>AutowiredAnnotationBeanPostProcessor 对象</td>
+              <td>处理 @Autowired 以及 @Value 注解</td>
+          </tr>
+          <tr>
+              <td>org.springframework.context.annotation.internalCommonAnnotationProcessor</td>
+              <td>CommonAnnotationBeanPostProcessor 对象</td>
+              <td>（条件激活）处理 JSR-250 注解，如：@PostConstruct等</td>
+          </tr>
+          <tr>
+              <td>org.springframework.context.event.internalEventListenerProcessor</td>
+              <td>EventListenerMethodProcessor 对象</td>
+              <td>处理标注 @EventListener 的 Spring 事件监听方法</td>
+          </tr>
+          <tr>
+              <td>org.springframework.context.event.internalEventListenerFactory</td>
+              <td>DefaultEventListenerFactory 对象</td>
+              <td>@EventListener 事件监听方法适配为 ApplicationListener</td>
+          </tr>
+          <tr>
+             <td>org.springframework.context.annotation.internalPersistenceAnnotationProcessor</td>
+             <td>PersistenceAnnotationBeanPostProcessor 对象</td>
+             <td>（条件激活）处理 JPA 注解场景</td>
+          </tr>
+      </tbody>
+    </table>

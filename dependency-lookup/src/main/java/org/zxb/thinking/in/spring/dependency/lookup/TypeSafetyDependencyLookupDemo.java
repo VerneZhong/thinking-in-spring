@@ -55,13 +55,13 @@ public class TypeSafetyDependencyLookupDemo {
 
     private static void displayObjectProviderIfAvailable(AnnotationConfigApplicationContext applicationContext) {
         ObjectProvider<User> userObjectProvider = applicationContext.getBeanProvider(User.class);
-        printBeansException("displayObjectProviderIfAvailable", () -> userObjectProvider.getIfAvailable());
+        printBeansException("displayObjectProviderIfAvailable", userObjectProvider::getIfAvailable);
     }
 
     private static void displayObjectFactoryGetObject(AnnotationConfigApplicationContext applicationContext) {
         // ObjectProvider is ObjectFactory
         ObjectFactory<User> userObjectProvider = applicationContext.getBeanProvider(User.class);
-        printBeansException("displayObjectFactoryGetObject", () -> userObjectProvider.getObject());
+        printBeansException("displayObjectFactoryGetObject", userObjectProvider::getObject);
     }
 
     private static void displayBeanFactoryGetBean(BeanFactory beanFactory) {
