@@ -547,5 +547,19 @@
    * 996 面试题 - BeanFactory.getBean 操作是否线程安全？
     答：BeanFactory.getBean 方法的执行是线程安全的，操作过程中会增加互斥锁
     
-  
-    
+## 第六章 Spring IoC 依赖注入（Dependency Injection）
+ ### 依赖注入的模式和类型
+ * 手动模式 - 配置或者编程的防晒，提前安排注入规则
+    * XML 资源配置元信息
+    * Java 注解配置元信息
+    * API 配置元信息
+ * 自动模式 - 实现方提供依赖自动关联的方式，按照内建的注入规则
+    * Autowiring（自动绑定）
+ * 依赖注入类型
+   | 依赖注入类型  | 配置元数据举例 |
+   | ----------  | :---------  |
+   | Setter 方法  | ```<proeprty name="user" ref="userBean"/>``` |
+   | 构造器  | ```<constructor-arg name="user" ref="userBean" />``` |
+   | 字段 | ```java @Autowired User user;``` |
+   | 方法 | ```java @Autowired public void user(User user) {...}``` |
+   | 接口回调 | ```java class MyBean implements BeanFactoryAware {...}``` |
