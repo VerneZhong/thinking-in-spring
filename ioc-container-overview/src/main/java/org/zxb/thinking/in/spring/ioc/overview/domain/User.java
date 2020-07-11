@@ -1,5 +1,8 @@
 package org.zxb.thinking.in.spring.ioc.overview.domain;
 
+import org.springframework.core.io.Resource;
+import org.zxb.thinking.in.spring.ioc.overview.enums.City;
+
 /**
  * 用户 class
  *
@@ -10,6 +13,9 @@ public class User {
 
     private Long id;
     private String name;
+    private City city;
+
+    private Resource configFileLocation;
 
     public Long getId() {
         return id;
@@ -27,11 +33,29 @@ public class User {
         this.name = name;
     }
 
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
+
+    public Resource getConfigFileLocation() {
+        return configFileLocation;
+    }
+
+    public void setConfigFileLocation(Resource configFileLocation) {
+        this.configFileLocation = configFileLocation;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", city=" + city +
+                ", configFileLocation=" + configFileLocation +
                 '}';
     }
 
@@ -43,6 +67,7 @@ public class User {
         User user = new User();
         user.setId(1L);
         user.setName("Chivalry");
+        user.setCity(City.BEIJING);
         return user;
     }
 }

@@ -7,6 +7,8 @@
     <bean id="user" class="org.zxb.thinking.in.spring.ioc.overview.domain.User">
         <property name="id" value="1"/>
         <property name="name" value="zxb"/>
+        <property name="city" value="WUHAN"/>
+        <property name="configFileLocation" value="classpath:META-INF/user-config.properties"/>
     </bean>
 
     <bean id="superUser" class="org.zxb.thinking.in.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
