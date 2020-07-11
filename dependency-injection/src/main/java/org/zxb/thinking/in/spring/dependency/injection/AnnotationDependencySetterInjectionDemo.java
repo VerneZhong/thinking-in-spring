@@ -29,6 +29,7 @@ public class AnnotationDependencySetterInjectionDemo {
         // 启动 Spring 应用上下文
         applicationContext.refresh();
 
+        // 依赖查找并创建 Bean
         UserHolder userHolder = applicationContext.getBean(UserHolder.class);
         System.out.println(userHolder);
 
