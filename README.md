@@ -571,7 +571,7 @@
  ### 自动绑定（Autowiring）模式
   * Autowiring modes
     | 模式 | 说明 |
-    | ----------  | :---------  |
+    | ----------  | :--------- |
     | no | 默认值，未激活 Autowiring，需要手动指定依赖注入对象 |
     | byName | 根据被注入属性的名称作为 Bean 名称进行依赖查找，并将对象设置到该属性 |
     | byType | 根据被注入属性的类型作为依赖类型进行查找，并将对象设置到该属性 |
@@ -618,6 +618,7 @@
   * Aware 系列接口回调
     * 自动模式
         | 内建接口 | 说明 |
+        | ---------- | :--------- |
         | BeanFactoryAware | 获取 IoC 容器 - BeanFactory |
         | ApplicationContextAware | 获取 Spring 应用上下文 - ApplicationContext 对象 |
         | EnvironmentAware | 获取 Environment 对象 |
@@ -627,3 +628,10 @@
         | MessageSourceAware | 获取当前 MessageSource 对象， 用于 Spring 国际化 |
         | ApplicationEventPublisherAware | 获取当前 ApplicationEventPublisherAware 对象，用于 Spring 事件 |
         | EmbeddedValueResolverAware | 获取 StringValueResolver 对象，用于占位符处理 |
+        
+ ### 依赖注入类型选择
+ *  注入类型
+    * 低依赖：构造器注入
+    * 多依赖：Setter 注入
+    * 便利性：字段注入
+    * 声明类：方法注入
