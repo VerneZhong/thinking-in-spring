@@ -560,9 +560,6 @@
    | ----------  | :---------  |
    | Setter 方法  | ```<proeprty name="user" ref="userBean"/>``` |
    | 构造器  | ```<constructor-arg name="user" ref="userBean" />``` |
-   | 字段 | ```java
-   @Autowired User user;``` |
-   | 方法 | ```java 
-   @Autowired public void user(User user) {...}``` |
-   | 接口回调 | ```java
-   class MyBean implements BeanFactoryAware {...}``` |
+   | 字段 | ```@Autowired User user;``` |
+   | 方法 | ```@Autowired public void user(User user) {...}``` |
+   | 接口回调 | ```class MyBean implements BeanFactoryAware {...}``` |
