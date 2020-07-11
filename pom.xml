@@ -18,7 +18,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <spring.version>5.2.2.RELEASE</spring.version>
+        <spring.version>5.2.7.RELEASE</spring.version>
     </properties>
 
     <!-- Spring 依赖 -->
