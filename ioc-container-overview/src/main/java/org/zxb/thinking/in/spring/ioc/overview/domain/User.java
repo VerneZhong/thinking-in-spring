@@ -95,4 +95,16 @@ public class User {
         user.setCity(City.BEIJING);
         return user;
     }
+
+    /**
+     * 静态方法构建对象
+     * @return
+     */
+    public static User createUser(Long id) {
+        User user = new User();
+        user.setId(id);
+        user.setName("Chivalry" + id);
+        user.setCity(City.BEIJING);
+        return user;
+    }
 }

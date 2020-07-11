@@ -618,7 +618,7 @@
   * Aware 系列接口回调
     * 自动模式
         | 内建接口 | 说明 |
-        | ---------- | :--------- |
+        | - | :- |
         | BeanFactoryAware | 获取 IoC 容器 - BeanFactory |
         | ApplicationContextAware | 获取 Spring 应用上下文 - ApplicationContext 对象 |
         | EnvironmentAware | 获取 Environment 对象 |
@@ -650,4 +650,9 @@
         * Collection：List、Set（SortedSet、NavigableSet、EnumSet）
         * Map：Properties
         
- 
+ ### 限定注入
+ *  使用注解 @Qualifier 限定
+    * 通过 Bean 名称限定
+    * 通过分组限定
+ *  基于注解 @Qualifier 扩展限定
+    * 自定义注解 - 如 SpringCloud @LoadBalanced
