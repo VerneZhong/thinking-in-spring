@@ -597,10 +597,18 @@
     * 自动模式
         * constructor
         
- ### 构造器注入
+ ### 字段注入
   * 实现方法
     * 手动模式
         * Java 注解配置元信息
             * @Autowired
             * @Resource
             * @Inject（可选）
+ ### 方法注入
+  * 实现方法
+    * 手动模式
+        * Java 注解配置元信息
+            * @Autowired
+            * @Resource
+            * @Inject（可选）
+            * @Bean
