@@ -588,4 +588,11 @@
         * byName
         * byType
   
-  
+ ### 构造器注入
+  * 实现方法
+    * 手动模式
+        * XML 资源配置元信息
+        * Java 注解配置元信息
+        * API 配置元信息
+    * 自动模式
+        * constructor
