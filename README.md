@@ -563,3 +563,29 @@
    | 字段 | ```@Autowired User user;``` |
    | 方法 | ```@Autowired public void user(User user) {...}``` |
    | 接口回调 | ```class MyBean implements BeanFactoryAware {...}``` |
+   
+ ### 自动绑定（Autowiring）介绍
+  Spring提供了一种自动检测各种bean之间关系的方法。 这可以通过在Spring配置文件中声明所有bean依赖项来完成。 因此，Spring能够利用BeanFactory来了解所有使用过的bean之间的依赖关系。
+  基于XML配置的自动装配功能具有五种模式-否，byName，byType，构造函数和自动检测。 默认模式为否。
+  
+ ### 自动绑定（Autowiring）模式
+  * Autowiring modes
+    | 模式 | 说明 |
+    | ----------  | :---------  |
+    | no | 默认值，未激活 Autowiring，需要手动指定依赖注入对象 |
+    | byName | 根据被注入属性的名称作为 Bean 名称进行依赖查找，并将对象设置到该属性 |
+    | byType | 根据被注入属性的类型作为依赖类型进行查找，并将对象设置到该属性 |
+    | constructor | 特殊 byType 类型，用于构造器参数 |
+  参考枚举：```org.springframework.beans.factory.annotation.Autowire```
+  
+ ### Setter 方法注入
+  * 实现方法
+    * 手动模式
+        * XML 资源配置元信息
+        * Java 注解配置元信息
+        * API 配置元信息
+    * 自动模式
+        * byName
+        * byType
+  
+  
