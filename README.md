@@ -604,6 +604,7 @@
             * @Autowired
             * @Resource
             * @Inject（可选）
+            
  ### 方法注入
   * 实现方法
     * 手动模式
@@ -612,3 +613,17 @@
             * @Resource
             * @Inject（可选）
             * @Bean
+            
+ ### 接口回调注入
+  * Aware 系列接口回调
+    * 自动模式
+        | 内建接口 | 说明 |
+        | BeanFactoryAware | 获取 IoC 容器 - BeanFactory |
+        | ApplicationContextAware | 获取 Spring 应用上下文 - ApplicationContext 对象 |
+        | EnvironmentAware | 获取 Environment 对象 |
+        | ResourceLoaderAware | 获取资源加载器对象 - ResourceLoader |
+        | BeanClassLoaderAware | 获取加载当前 Bean Class 的 ClassLoader | 
+        | BeanNameAware | 获取当前 Bean 的名称 |
+        | MessageSourceAware | 获取当前 MessageSource 对象， 用于 Spring 国际化 |
+        | ApplicationEventPublisherAware | 获取当前 ApplicationEventPublisherAware 对象，用于 Spring 事件 |
+        | EmbeddedValueResolverAware | 获取 StringValueResolver 对象，用于占位符处理 |
