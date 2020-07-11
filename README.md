@@ -642,3 +642,12 @@
     * 标量类型（Scalar）：Number、Character、Boolean、Enum、Locale、Charset、Currency、Properties、UUID
     * 常规类型（General）：Object、String、TimeZone、Calendar、Optional等
     * Spring类型：Resource、InputSource、Formatter等
+    
+ ### 集合类型注入
+ *  集合类型
+    * 数组类型（Array）：原生类型、标量类型、常规类型、Spring类型
+    * 集合类型（Collection）
+        * Collection：List、Set（SortedSet、NavigableSet、EnumSet）
+        * Map：Properties
+        
+ 

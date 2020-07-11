@@ -8,6 +8,14 @@
         <property name="id" value="1"/>
         <property name="name" value="zxb"/>
         <property name="city" value="WUHAN"/>
+        <property name="workCities" value="WUHAN, BEIJING"/>
+<!--        <property name="lifeCities" value="WUHAN, BEIJING"/>-->
+        <property name="lifeCities">
+            <list>
+                <value>WUHAN</value>
+                <value>BEIJING</value>
+            </list>
+        </property>
         <property name="configFileLocation" value="classpath:META-INF/user-config.properties"/>
     </bean>
 

@@ -50,7 +50,7 @@ public class DependencyLookupDemo {
         if (beanFactory instanceof ListableBeanFactory) {
             ListableBeanFactory listableBeanFactory = (ListableBeanFactory) beanFactory;
             // Map Key -> user Bean id, Value = User 对象
-            Map<String, User> users = (Map) listableBeanFactory.getBeansWithAnnotation(Super.class);
+            Map users = listableBeanFactory.getBeansWithAnnotation(Super.class);
             System.out.println("按注解查找 User 集合对象：" + users);
         }
     }
