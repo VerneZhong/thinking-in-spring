@@ -665,4 +665,8 @@
     * 单一类型
     * 集合类型
     
- ### 
+ ### 依赖处理过程
+ * 基础知识
+    * 入口 - DefaultListableBeanFactory#resolveDependency
+    * 依赖描述符 - DependencyDescriptor
+    * 自动绑定候选对象处理器 - AutowireCandidateResolver

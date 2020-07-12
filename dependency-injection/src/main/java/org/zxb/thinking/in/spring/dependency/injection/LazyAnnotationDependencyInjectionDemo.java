@@ -3,6 +3,7 @@ package org.zxb.thinking.in.spring.dependency.injection;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.zxb.thinking.in.spring.ioc.overview.domain.User;
@@ -18,6 +19,7 @@ import java.util.Set;
 public class LazyAnnotationDependencyInjectionDemo {
 
     @Autowired
+    @Qualifier("user")
     private User user; // 实时注入  ->  superUser
 
     @Autowired
