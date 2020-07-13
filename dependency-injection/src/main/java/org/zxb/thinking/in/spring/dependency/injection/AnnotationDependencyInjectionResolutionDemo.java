@@ -11,6 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Lazy;
 import org.zxb.thinking.in.spring.ioc.overview.domain.User;
 
+import javax.inject.Inject;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Optional;
@@ -42,6 +43,9 @@ public class AnnotationDependencyInjectionResolutionDemo {
     @Autowired
     private Optional<User> userOptional;  // superUser
 
+    @Inject  // JSR-330 @Inject 注解
+    private User injectedUser;
+
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
         AnnotationConfigApplicationContext applicationContext =
@@ -65,6 +69,8 @@ public class AnnotationDependencyInjectionResolutionDemo {
 
         // 期待输出 superUser
         System.out.println("demo.user = " + demo.user);
+
+        System.out.println("demo.injectedUser = " + demo.injectedUser);
 
         // 期待输出 user + superUser
         System.out.println("demo.users = " + demo.users);

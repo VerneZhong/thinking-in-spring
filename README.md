@@ -670,3 +670,13 @@
     * 入口 - DefaultListableBeanFactory#resolveDependency
     * 依赖描述符 - DependencyDescriptor
     * 自动绑定候选对象处理器 - AutowireCandidateResolver
+    
+ ### @Autowired 注入 
+ * @Autowired 注入过程
+    * 元信息解析
+    * 依赖查找
+    * 依赖注入（字段、方法）
+   
+ ### @Inject 注入
+ * @Inject 注入过程
+    * 如果 JSR-330存在于 ClassPath 中，复用 AutowiredAnnotationBeanProcessor 实现
