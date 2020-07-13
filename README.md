@@ -680,3 +680,15 @@
  ### @Inject 注入
  * @Inject 注入过程
     * 如果 JSR-330存在于 ClassPath 中，复用 AutowiredAnnotationBeanProcessor 实现
+    
+ ### Java 通用注解注入原理
+ * CommonAnnotationBeanPostProcessor
+    * 注入注解
+        * javax.xml.ws.WebServiceRef
+        * javax.ejb.EJB
+        * javax.annotation.Resource
+    * 生命周期注解
+        * javax.annotation.PostConstruct
+        * javax.annotation.PreDestroy
+        
+        
