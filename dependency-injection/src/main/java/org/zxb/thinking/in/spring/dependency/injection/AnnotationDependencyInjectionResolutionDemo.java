@@ -4,18 +4,25 @@ import org.springframework.beans.TypeConverter;
 import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor;
 import org.springframework.beans.factory.config.DependencyDescriptor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
+import org.zxb.thinking.in.spring.dependency.injection.annotation.InjectUser;
+import org.zxb.thinking.in.spring.dependency.injection.annotation.MyAutowired;
 import org.zxb.thinking.in.spring.ioc.overview.domain.User;
 
 import javax.inject.Inject;
-import java.util.Collection;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.lang.annotation.Annotation;
+import java.util.*;
+
+import static java.util.Arrays.asList;
+import static org.springframework.context.annotation.AnnotationConfigUtils.AUTOWIRED_ANNOTATION_PROCESSOR_BEAN_NAME;
 
 /**
  * 注解驱动的依赖注入处理过程，实现原理是 {@link DefaultListableBeanFactory#resolveDependency(DependencyDescriptor, String, Set, TypeConverter)} 方法解析注入的依赖
@@ -40,11 +47,33 @@ public class AnnotationDependencyInjectionResolutionDemo {
     @Autowired  // 集合类型注入
     private Map<String, User> users;  // user + superUser
 
-    @Autowired
+    @MyAutowired
     private Optional<User> userOptional;  // superUser
 
     @Inject  // JSR-330 @Inject 注解
     private User injectedUser;
+
+    @InjectUser
+    private User myInjectUser;
+
+//    @Bean(name = AUTOWIRED_ANNOTATION_PROCESSOR_BEAN_NAME)
+//    public static AutowiredAnnotationBeanPostProcessor beanPostProcessor() {
+//        AutowiredAnnotationBeanPostProcessor postProcessor = new AutowiredAnnotationBeanPostProcessor();
+//
+//        // @Autowired + 新注解 @InjectUser
+//        Set<Class<? extends Annotation>> autowiredAnnotationTypes = new LinkedHashSet<>(asList(Autowired.class, Inject.class, InjectUser.class));
+//        postProcessor.setAutowiredAnnotationTypes(autowiredAnnotationTypes);
+//
+//        return postProcessor;
+//    }
+
+    @Bean
+    @Order(Ordered.LOWEST_PRECEDENCE - 3)
+    public static AutowiredAnnotationBeanPostProcessor beanPostProcessor() {
+        AutowiredAnnotationBeanPostProcessor postProcessor = new AutowiredAnnotationBeanPostProcessor();
+        postProcessor.setAutowiredAnnotationType(InjectUser.class);
+        return postProcessor;
+    }
 
     public static void main(String[] args) {
         // 创建 BeanFactory 容器
@@ -77,6 +106,9 @@ public class AnnotationDependencyInjectionResolutionDemo {
 
         // 期待输出 user + superUser
         System.out.println("demo.userOptional = " + demo.userOptional);
+
+        // 期待输出 superUser
+        System.out.println("demo.myInjectUser = " + demo.myInjectUser);
 
         // 关闭 Spring 上下文
         applicationContext.close();

@@ -691,4 +691,12 @@
         * javax.annotation.PostConstruct
         * javax.annotation.PreDestroy
         
-        
+ ### 自定义依赖注入注解
+ * 基于 AutowiredAnnotationBeanPostProcessor 实现
+ * 自定义实现
+    * 生命周期处理
+        * InstantiationAwareBeanPostProcessor
+        * MergedBeanDefinitionPostProcessor
+    * 元数据
+        * InjectedElement
+        * InjectionMetadata
