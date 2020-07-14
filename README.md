@@ -742,3 +742,11 @@
     * 注册：BeanDefinitionRegistry#registerBeanDefinition
     * 类型：延迟和非延迟
     * 顺序：Bean 生命周期顺序按照注册顺序
+    
+ ### 单例对象作为依赖来源
+ * 要素
+    * 来源：外部普通 Java 对象（不一定是POJO）
+    * 注册：SingletonBeanRegistry#registerSingleton
+ 限制
+    * 无生命周期管理
+    * 无法实现延迟初始化 Bean
