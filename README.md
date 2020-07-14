@@ -758,3 +758,19 @@
     * 无生命周期管理
     * 无法实现延迟初始化 Bean
     * 无法通过依赖查找
+    
+ ### 外部化配置作为依赖来源
+ * 要素
+    * 类型：非常规 Spring 对象依赖来源
+ * 限制
+    * 无生命周期管理
+    * 无法实现延迟初始化 Bean
+    * 无法通过依赖查找
+  
+ ### 面试题精选
+ * 沙雕面试题 - 注入和查找的依赖来源是否相同？
+  答：否，依赖查找的来源仅限于 Spring BeanDefinition 以及单例对象，而依赖注入的来源还包括 Resolvable Dependency 以及 @Value 所标注的外部化配置
+ * 996面试题 - 单例对象能在 IoC 容器启动后注册吗？
+  答：可以的，单例对象的注册与 BeanDefinition 不同，BeanDefinition 会被 ConfigurableListableBeanFactory#freezeConfiguration() 方法影响，从而冻结注册，单例对象则没有这个限制。
+ * 劝退面试题 - Spring 依赖注入的来源有哪些？
+  答：Spring BeanDefinition、单例对象、Resolvable Dependency、@Value 外部化配置
