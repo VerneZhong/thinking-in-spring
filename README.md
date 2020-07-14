@@ -735,4 +735,10 @@
     |Spring BeanDefinition|是|是|有|依赖查找、依赖注入|
     |单体对象|是|否|无|依赖查找、依赖注入|
     |Resolvable Dependency|否|否|无|依赖注入|
-    
+ 
+ ### Spring BeanDefinition 作为依赖来源
+ * 要素
+    * 元数据：BeanDefinition
+    * 注册：BeanDefinitionRegistry#registerBeanDefinition
+    * 类型：延迟和非延迟
+    * 顺序：Bean 生命周期顺序按照注册顺序
