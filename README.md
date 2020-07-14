@@ -549,7 +549,7 @@
     
 ## 第六章 Spring IoC 依赖注入（Dependency Injection）
  ### 依赖注入的模式和类型
- * 手动模式 - 配置或者编程的防晒，提前安排注入规则
+ * 手动模式 - 配置或者编程的方式，提前安排注入规则
     * XML 资源配置元信息
     * Java 注解配置元信息
     * API 配置元信息
@@ -700,3 +700,31 @@
     * 元数据
         * InjectedElement
         * InjectionMetadata
+ 
+ ### 面试题精选
+ * 沙雕面试题 - 有多少种依赖注入的方式？
+  答：构造器注入、Setter注入、字段注入、方法注入、接口回调注入
+  
+ * 996面试题 - 你偏好构造器注入还是 Setter 注入？
+  答：两种依赖注入的方式都可使用，如果是必须依赖的话，那么推荐使用构造器注入，Setter注入用于可选依赖。
+  
+## 第七章 Spring IoC 依赖来源（Dependency Sources）
+ ### 依赖查找的来源
+ * 查找来源
+    | 来源 | 配置元数据 |
+    | --- | :----|
+    | Spring BeanDefinition | ```<bean id="user" class="org.zxb...User" />``` |
+    || ```@Bean public User user() {...}``` |
+    || BeanDefinitionBuilder |
+    | 单例对象 | API 实现 |
+    
+ ### 依赖注入的来源
+ * 注入来源
+    | 来源 | 配置元数据 |
+    | --- | :----|
+    | Spring BeanDefinition | ```<bean id="user" class="org.zxb...User" />``` |
+    || ```@Bean public User user() {...}``` |
+    || BeanDefinitionBuilder |
+    | 单例对象 | API 实现 |
+    | 非 Spring 容器管理对象 | |
+ 
