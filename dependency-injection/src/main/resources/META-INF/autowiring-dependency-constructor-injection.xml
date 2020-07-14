@@ -6,5 +6,5 @@
 
     <import resource="classpath:META-INF/dependency-lookup-context.xml"/>
 
-    <bean class="org.zxb.thinking.in.spring.dependency.injection.UserHolder" autowire="constructor" />
+    <bean class="org.zxb.thinking.in.spring.ioc.dependency.injection.UserHolder" autowire="constructor" />
 </beans>

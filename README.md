@@ -730,11 +730,11 @@
  
  ### Spring 容器管理和游离对象
  * 依赖对象
-    |来源|Spring Bean 对象|生命周期管理|配置元信息|使用场景|
+    | 来源 | Spring Bean 对象 | 生命周期管理 | 配置元信息 | 使用场景 |
     |-|-|-|-|:-|
-    |Spring BeanDefinition|是|是|有|依赖查找、依赖注入|
-    |单体对象|是|否|无|依赖查找、依赖注入|
-    |Resolvable Dependency|否|否|无|依赖注入|
+    | Spring BeanDefinition | 是 | 是 | 有 | 依赖查找、依赖注入 |
+    | 单体对象 | 是 | 否 | 无 | 依赖查找、依赖注入 |
+    | Resolvable Dependency | 否 | 否 | 无 | 依赖注入 |
  
  ### Spring BeanDefinition 作为依赖来源
  * 要素
@@ -774,3 +774,22 @@
   答：可以的，单例对象的注册与 BeanDefinition 不同，BeanDefinition 会被 ConfigurableListableBeanFactory#freezeConfiguration() 方法影响，从而冻结注册，单例对象则没有这个限制。
  * 劝退面试题 - Spring 依赖注入的来源有哪些？
   答：Spring BeanDefinition、单例对象、Resolvable Dependency、@Value 外部化配置
+  
+## Spring Bean 作用域（Scopes）
+ ### Spring Bean 作用域
+ * 作用域
+    | 来源 | 说明 |
+    |-|:-|
+    | Singleton | 默认 Spring Bean 作用域，一个 Bean Factory 有且仅有一个实例 |
+    | prototype | 原型作用域，每次依赖查找和依赖注入生成新的 Bean 对象 | 
+    | request | 将 Spring Bean 存储在 ServletRequest 上下文中 |
+    | session | 将 Spring Bean 存储在 HttpSession 中 |
+    | application | 将 Spring Bean 存储在 ServerContext 中 |
+    
+ ### Singleton Bean 作用域
+ * Singleton Bean 无论是依赖查找还是依赖注入，均为同一个对象
+    
+ ### Prototype Bean 作用域
+ * Prototype Bean 无论是依赖查找还是依赖注入，均为新生成的对象
+ * 注意事项
+    * Spring 容器没有办法管理 prototype Bean 的完整生命周期，也没用办法记录实例的存在。销毁回调方法将不会执行，可以利用 BeanPostProcessor 进行清扫工作。

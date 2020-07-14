@@ -15,6 +15,7 @@
         <module>dependency-lookup</module>
         <module>dependency-injection</module>
         <module>dependency-source</module>
+        <module>bean-scope</module>
     </modules>
     <packaging>pom</packaging>
 

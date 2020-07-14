@@ -1,8 +1,11 @@
 package org.zxb.thinking.in.spring.ioc.overview.domain;
 
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.core.io.Resource;
 import org.zxb.thinking.in.spring.ioc.overview.enums.City;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,7 +15,7 @@ import java.util.List;
  * @author Mr.zxb
  * @date 2020-01-05 15:23
  */
-public class User {
+public class User implements BeanNameAware {
 
     private Long id;
     private String name;
@@ -24,6 +27,11 @@ public class User {
 
     private Resource configFileLocation;
 
+    /**
+     * 当前 Bean 的名称
+     */
+    private transient String beanName;
+
     public Long getId() {
         return id;
     }
@@ -34,6 +42,10 @@ public class User {
 
     public String getName() {
         return name;
+    }
+
+    public String getBeanName() {
+        return beanName;
     }
 
     public void setName(String name) {
@@ -106,5 +118,19 @@ public class User {
         user.setName("Chivalry" + id);
         user.setCity(City.BEIJING);
         return user;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("用户 Bean ["+ beanName +"] 初始化...");
+    }
+
+    @PreDestroy
+    public void destroy() {
+        System.out.println("用户 Bean [" + beanName + "] 销毁...");
+    }
+
+    public void setBeanName(String name) {
+        this.beanName = name;
     }
 }
