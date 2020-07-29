@@ -793,3 +793,10 @@
  * Prototype Bean 无论是依赖查找还是依赖注入，均为新生成的对象
  * 注意事项
     * Spring 容器没有办法管理 prototype Bean 的完整生命周期，也没用办法记录实例的存在。销毁回调方法将不会执行，可以利用 BeanPostProcessor 进行清扫工作。
+    
+ ### Request Bean 作用域
+ * 配置
+    * XML - <bean class="..." scope="request" />
+    * Java 注解 - @RequestScope 或 @Scope(WebApplicationContext.SCOPE_REQUEST)
+ * 实现
+    * API - RequestScope
