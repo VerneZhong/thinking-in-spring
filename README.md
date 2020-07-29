@@ -807,3 +807,10 @@
     * Java 注解 - @SessionScope 或 @Scope(WebApplicationContext.SCOPE_SESSION)
  * 实现
     * API - SessionScope
+    
+ ### "application" Bean 作用域
+ * 配置
+    * XML - <bean class="..." scope="application" />
+    * Java 注解 - @ApplicationScope 或 @Scope(WebApplicationContext.SCOPE_APPLICATION)
+ * 实现
+    * API - ApplicationScope
