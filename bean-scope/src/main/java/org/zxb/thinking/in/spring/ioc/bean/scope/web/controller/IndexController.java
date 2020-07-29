@@ -16,7 +16,7 @@ import org.zxb.thinking.in.spring.ioc.overview.domain.User;
 public class IndexController {
 
     @Autowired
-    private User user;
+    private User user;  // CGLIB 代理后的对象（不变的）
 
     @GetMapping
     public String index(Model model) {
