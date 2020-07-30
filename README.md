@@ -830,4 +830,17 @@
         </property>
       </bean>
       ```
+ ### 课外资料
+ * Spring Cloud RefreshScope 是如何控制 Bean 的动态刷新？
+ 答：通过继承于 @Scope 注解，创建名为 "refresh" 元标注 @RefreshScope 来实现，具体实现类 RefreshScope 
     
+ ### 面试题
+ * 沙雕面试题 - Spring 内建的 Bean 作用域有几种？
+ 答：singleton、prototype、request、session、application 以及 websocket
+ 
+ * 沙雕面试题 - singleton Bean 是否在一个应用是唯一的？
+ 答：否定的，singleton bean 仅在当前 Spring IoC 容器（BeanFactory）中是单例对象。
+ 
+ * 劝退面试题 - "application" Bean 是否被其他方案替代？
+ 答：可以的，实际上，"application" Bean 与 "singleton" Bean 没有本质区别
+ 
