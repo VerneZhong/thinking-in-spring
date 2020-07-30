@@ -814,3 +814,20 @@
     * Java 注解 - @ApplicationScope 或 @Scope(WebApplicationContext.SCOPE_APPLICATION)
  * 实现
     * API - ApplicationScope
+    
+ ### 自定义 Bean 作用域
+ * 实现 Scope
+    * org.springframework.beans.factory.config.Scope
+ * 注册
+    * API - org.springframework.beans.factory.config.ConfigurableBeanFactory#registerScope
+    * 配置
+      ``` 
+      <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="..."></entry>
+            </map>
+        </property>
+      </bean>
+      ```
+    
