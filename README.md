@@ -844,3 +844,19 @@
  * 劝退面试题 - "application" Bean 是否被其他方案替代？
  答：可以的，实际上，"application" Bean 与 "singleton" Bean 没有本质区别
  
+ ## Spring Bean 生命周期（Bean Lifecycle）
+ ### Spring Bean 元信息配置阶段
+ * Bean Definition 配置
+    * 面向资源
+        * XML 配置
+        * Properties 资源配置
+    * 面向注解
+    * 面向API
+ 
+ ### Spring Bean 元信息解析阶段
+ * 面向资源 BeanDefinition 解析
+    * BeanDefinitionReader
+    * XML 解析器 - BeanDefinitionParser
+ * 面向注解 BeanDefinition 解析
+    * AnnotatedBeanDefinitionReader
+  
