@@ -869,3 +869,8 @@
     * 父子 BeanDefinition 合并
         * 当前 BeanFactory 查找
         * 层次性 BeanFactory 查找
+        
+ ### Spring Bean Class 加载阶段
+ * ClassLoader 类加载
+ * Java Security 安全控制
+ * ConfigurableBeanFactory 临时 ClassLoader
