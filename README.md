@@ -860,3 +860,12 @@
  * 面向注解 BeanDefinition 解析
     * AnnotatedBeanDefinitionReader
   
+ ### Spring Bean 注册阶段
+ * BeanDefinition 注册接口
+    * BeanDefinitionRegistry
+    
+ ### Spring BeanDefinition 合并阶段
+ * BeanDefinition 合并
+    * 父子 BeanDefinition 合并
+        * 当前 BeanFactory 查找
+        * 层次性 BeanFactory 查找
