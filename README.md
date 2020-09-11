@@ -874,3 +874,7 @@
  * ClassLoader 类加载
  * Java Security 安全控制
  * ConfigurableBeanFactory 临时 ClassLoader
+ 
+ ### Spring Bean 实例化前阶段
+ * 非主流生命周期 - Bean 实例化前阶段
+    * InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation

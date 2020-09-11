@@ -26,7 +26,7 @@
     <!-- 合并后 GenericBeanDefinition 变成 RootBeanDefinition，并且覆盖 parent 相关配置 -->
     <!-- primary = true, 增加了一个 address 属性 -->
     <bean id="superUser" class="org.zxb.thinking.in.spring.ioc.overview.domain.SuperUser" parent="user" primary="true">
-        <property name="address" value="北京"></property>
+        <property name="address" value="北京"/>
     </bean>
 
 <!--    内建 Bean对象-->
