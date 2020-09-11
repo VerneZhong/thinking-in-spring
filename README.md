@@ -878,3 +878,13 @@
  ### Spring Bean 实例化前阶段
  * 非主流生命周期 - Bean 实例化前阶段
     * InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+    
+ ### Spring Bean 实例化阶段
+ * 实例化方式
+    * 传统实例化方式
+        * 实例化策略 - InstantiationStrategy
+    * 构造器依赖注入
+    
+ ### Spring Bean 实例化后阶段
+ * Bean 属性赋值（Populate）判断
+    * InstantiationAwareBeanPostProcessor#postProcessorAfterInstantiation   
